@@ -1,0 +1,115 @@
+openapi: 3.0.0
+info:
+  title: User Api
+  version: 1.0.0
+servers:
+  - url: http://localhost:5000
+paths:
+  /api/password/reset-password/64a1fd3cedf3a3b8f6e0d3cc:
+    post:
+      summary: Reset Password
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                password:
+                  type: string
+      responses:
+        '200':
+          description: Success
+  /api/password/forgot-password:
+    post:
+      summary: Forgot Password
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+      responses:
+        '200':
+          description: Success
+  /api/user/64a250f7e24663089b7a8f7f:
+    delete:
+      summary: Delete User
+      responses:
+        '200':
+          description: Success
+  /api/user/new:
+    post:
+      summary: Create New User
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                firstName:
+                  type: string
+                lastName:
+                  type: string
+                email:
+                  type: string
+                password:
+                  type: string
+                userId:
+                  type: string
+                role:
+                  type: string
+                isActive:
+                  type: string
+      responses:
+        '200':
+          description: Success
+  /api/user/64a1fd3cedf3a3b8f6e0d3cc:
+    get:
+      summary: Get User By Id
+      responses:
+        '200':
+          description: Success
+    put:
+      summary: Update User By Id
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                firstName:
+                  type: string
+                lastName:
+                  type: string
+                email:
+                  type: string
+                phoneNumber:
+                  type: string
+                age:
+                  type: string
+                graduationYear:
+                  type: string
+                about:
+                  type: string
+                nationality:
+                  type: string
+                country:
+                  type: string
+                city:
+                  type: string
+                university:
+                  type: string
+                major:
+                  type: string
+                image:
+                  type: string
+                  format: binary
+      responses:
+        '200':
+          description: Success
